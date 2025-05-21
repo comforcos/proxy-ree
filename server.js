@@ -41,4 +41,6 @@ app.get('/datos-ree', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`🚀 Proxy REE funcionando en puerto ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Servidor escuchando en puerto ${PORT}`);
+});
