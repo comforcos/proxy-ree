@@ -4,13 +4,10 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 
-// Clave API desde variables de entorno
 const REE_API_KEY = process.env.REE_API_KEY;
 
-// Indicadores ESIOS
 const INDICADORES = {
   demanda: 1001,
   eolica: 600,
@@ -22,7 +19,6 @@ const INDICADORES = {
   otros: 618
 };
 
-// Endpoint principal
 app.get('/datos-ree', async (req, res) => {
   try {
     const datos = {};
@@ -52,7 +48,6 @@ app.get('/datos-ree', async (req, res) => {
   }
 });
 
-// Arranque del servidor
 app.listen(PORT, () => {
   console.log(`✅ Servidor funcionando en puerto ${PORT}`);
 });
